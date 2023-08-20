@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Struktur Organisasi Desa</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      .org-chart {
+        margin-top: 20px;
+      }
+
+      .sidebar {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-right: 1px solid #dee2e6;
+      }
+
+      .content {
+        padding: 20px;
+      }
+
+      .node {
+        cursor: pointer;
+        margin: 5px 0;
+        border-bottom: 2px solid #a6a6a7;
+        border-right: 1px solid #98a0a8;
+        border-radius: 5px;
+        padding: 5px;
+      }
+
+      .node-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .node-list .node {
+        cursor: pointer;
+        margin: 5px 0;
+      }
+
+      .node-content {
+        display: none;
+        margin: 5px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+
+      .node-content strong {
+        display: inline-block;
+        width: 140px; /* Atur lebar agar nama pejabat dan jabatan rata */
+        font-weight: bold;
+      }
+
+      .active {
+        display: block !important;
+      }
+
+      .active-node {
+        background-color: #007bffc9 !important;
+        color: white !important;
+        transform: scale(1.05);
+      }
+
+      /* profile card */
+      .center-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      @media (max-width: 767px) {
+        .profile-card {
+            font-size: 14px; /* Ubah ukuran font untuk tampilan ponsel */
+            width: 100%;
+            height: 100%;
+        }
+    }
+      .profile-card {
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        max-width: 700px;
+        text-align: center;
+        position: relative;
+        display: none;
+      }
+      .profile-card img {
+        max-width: 100%;
+        max-height: 200px;
+      }
+      .close-button {
+        position: absolute;
+        top: -10px;
+        right: 1px;
+        font-size: 24px;
+        cursor: pointer;
+      }
+      .profile-link {
+        color: black;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center mt-4">Struktur Organisasi Desa</h1>
+      <div class="row org-chart mt-4">
+        <div class="col-md-3 sidebar">
+          <ul class="node-list">
+            <li class="node" data-target="StrukturOrganisasiContent">
+              Struktur Organisasi
+            </li>
+            <li class="node" data-target="kepalaDesaContent">Kepala Desa</li>
+            <li class="node" data-target="sekretarisDesaContent">
+              Sekretaris Desa
+            </li>
+            <li class="node" data-target="kaurUmumContent">Kaur TU dan Umum</li>
+            <li class="node" data-target="kaurKeuanganContent">
+              Kaur Keuangan
+            </li>
+            <li class="node" data-target="kaurPerencanaanContent">
+              Kaur Perencanaan
+            </li>
+            <li class="node" data-target="KasiPemerintahanContent">
+              Kasi Pemerintahan
+            </li>
+            <li class="node" data-target="KasiPelayananContent">
+              Kasi Pelayanan
+            </li>
+            <li class="node" data-target="KasiKesejahteraanContent">
+              Kasi Kesejahteraan
+            </li>
+            <li class="node" data-target="kepalaDusunContent">Kepala Dusun</li>
+            <!-- Tambahkan node lainnya di sini -->
+          </ul>
+        </div>
+        <div class="col-md-9 content">
+          <!-- Konten Struktur Organisasi -->
+          <div class="node-content collapse" id="StrukturOrganisasiContent">
+            <h3>Struktur Organisasi</h3>
+            <img
+              src="Struktur_organisasi.png"
+              alt="Struktur Organisasi"
+              class="img-fluid"
+            />
+            <!-- Gambar akan ditampilkan dengan ukuran yang responsif -->
+          </div>
+
+          <div class="node-content" id="kepalaDesaContent">
+            <p><strong>Jabatan</strong>: KEPALA DESA</p>
+            <p>
+              <strong>Nama Pejabat</strong>:
+              <a
+                href="#"
+                class="profile-link"
+                data-name="TARMO, S.Pd"
+                data-position="Kepala Desa"
+                data-nip="123456789"
+                data-education="S.Pd"
+                data-image="desa.jpg"
+                >TARMO, S.Pd</a
+              >
+            </p>
+
+            <p><strong>NIP</strong>: -</p>
+            <p>
+              Secara eksplisit Pasal 26 ayat (1) mengatur empat tugas utama
+              Kepala Desa yaitu:
+            </p>
+            <ol>
+              <li>Menyelenggarakan pemerintahan desa</li>
+              <li>Melaksanakan pembangunan desa</li>
+              <li>Melaksanakan pembinaan masyarakat desa</li>
+              <li>Memberdayakan masyarakat desa</li>
+            </ol>
+            <p>
+              Dengan tugas yang diberikan, Kepala Desa diharapkan bisa membawa
+              desa ke arah yang diharapkan oleh UU ini.
+            </p>
+          </div>
+
+          <div class="node-content" id="sekretarisDesaContent">
+            <p><strong>Jabatan</strong>: SEKRETARIS DESA</p>
+            <p><strong>Nama Pejabat</strong>: 
+                <a
+                href="#"
+                class="profile-link"
+                data-name="HENRI SETIAWAN"
+                data-position="Sekretaris Desa"
+                data-nip="-"
+                data-education="-"
+                data-image="desa.jpg"
+                >HENRI SETIAWAN</a
+              >
+            </p>
+            <p><strong>NIP</strong>: 112233445566</p>
+            <p>Sekretaris desa mempunyai tugas sebagai berikut:</p>
+            <ul>
+              <li>
+                Sekretaris desa/kelurahan berkedudukan sebagai unsur staff yang
+                membantu kepala desa/lurah dalam melaksanakan tugas dan
+                wewenangnya serta memimpin sekretariat desa/lurah.
+              </li>
+              <li>
+                Sekretaris desa/kelurahan mempunyai tugas menjalankan fungsi
+                administrasi kelurahan, pembangunan dan kemasyarakatan.
+              </li>
+            </ul>
+            <p>
+              Selain tugas tersebut di atas, seorang Sekretaris Desa harus mampu
+              menjalankan fungsi administrator dengan penuh tanggungjawab.
+              Fungsi dari Sekdes meliputi:
+            </p>
+            <ul>
+              <li>
+                Sebagai pelaksana urusan surat menyurat, kearsipan dan laporan.
+              </li>
+              <li>Sebagai pelaksana urusan keuangan.</li>
+              <li>
+                Sebagai pelaksana urusan administrasi pemerintahan, pembangunan,
+                dan kemasyarakatan.
+              </li>
+            </ul>
+            <p>
+              Dalam melaksanakan tugas dan fungsinya, sekretaris desa/kelurahan
+              akan dibantu oleh Kepala Urusan. Merekalah yang menangani
+              pelayanan ketatausahaan yang baik guna membantu Sekdes,
+              diantaranya sebagai berikut:
+            </p>
+            <ul>
+              <li>Kepala Urusan Pemerintahan</li>
+              <li>Kepala Urusan Pembangunan.</li>
+              <li>Kepala Urusan Keuangan</li>
+              <li>Kepala Urusan Umum</li>
+            </ul>
+          </div>
+
+          <div class="node-content" id="kaurUmumContent">
+            <p><strong>Jabatan</strong>: KAUR TU DAN UMUM</p>
+            <p><strong>Nama Pejabat</strong>: 
+                <a
+                href="#"
+                class="profile-link"
+                data-name="ADI MUNTRA, S.Pd"
+                data-position="Kaur TU dan Umum"
+                data-nip="-"
+                data-education="S.Pd"
+                data-image="desa.jpg"
+                >ADI MUNTRA, S.Pd</a
+              ></p>
+            <p><strong>NIP</strong>: -</p>
+            <p>
+              Tugas Kepala Urusan Tata Usaha dan Umum (Kaur TU dan Umum) umumnya
+              berfokus pada manajemen administratif dan tata usaha di tingkat
+              desa. Berikut adalah beberapa tugas dan tanggung jawab umum yang
+              mungkin dimiliki oleh seorang Kaur TU dan Umum:
+            </p>
+            <ul>
+              <li>
+                Administrasi Kantor: Mengelola operasional kantor desa, termasuk
+                penjadwalan, pengaturan peralatan kantor, dan pemeliharaan
+                fasilitas.
+              </li>
+              <li>
+                Pengarsipan dan Dokumentasi: Bertanggung jawab untuk pengarsipan
+                dan pengelolaan berkas-berkas administratif dan dokumen-dokumen
+                penting di desa.
+              </li>
+              <li>
+                Pelayanan Publik: Memberikan pelayanan kepada masyarakat terkait
+                administrasi, seperti pengurusan surat-surat resmi, permohonan
+                izin, dan lain-lain.
+              </li>
+              <li>
+                Koordinasi Internal: Berkoordinasi dengan berbagai unit atau
+                bagian di dalam pemerintahan desa untuk memastikan kelancaran
+                operasional dan komunikasi yang efektif.
+              </li>
+              <li>
+                Pengelolaan Anggaran: Membantu dalam pengelolaan anggaran desa,
+                termasuk pembuatan laporan keuangan, penyaluran dana, dan
+                pencatatan transaksi keuangan.
+              </li>
+              <li>
+                Penyusunan Rencana Kerja: Membantu dalam penyusunan rencana
+                kerja dan anggaran tahunan untuk kegiatan administratif dan tata
+                usaha desa.
+              </li>
+              <li>
+                Penerimaan dan Pengeluaran: Mengelola penerimaan dan pengeluaran
+                dana desa sesuai dengan ketentuan yang berlaku.
+              </li>
+              <li>
+                Pengadaan Barang dan Jasa: Melakukan proses pengadaan barang dan
+                jasa yang diperlukan oleh pemerintahan desa sesuai dengan
+                regulasi yang berlaku.
+              </li>
+              <li>
+                Pelaporan: Menyusun laporan bulanan, triwulan, atau tahunan
+                terkait kegiatan administratif dan tata usaha desa.
+              </li>
+              <li>
+                Kepatuhan Hukum: Memastikan bahwa semua kegiatan administratif
+                dan tata usaha desa dilaksanakan sesuai dengan hukum dan
+                peraturan yang berlaku.
+              </li>
+              <li>
+                Pengelolaan Kepegawaian: Menangani administrasi kepegawaian di
+                tingkat desa, termasuk pengelolaan data kepegawaian, absensi,
+                dan administrasi perizinan.
+              </li>
+              <li>
+                Pengaturan Rapat dan Acara: Mengatur jadwal dan persiapan untuk
+                rapat-rapat desa serta acara-acara tertentu yang melibatkan
+                pemerintahan desa.
+              </li>
+              <li>
+                Hubungan dengan Pihak Eksternal: Menjaga hubungan dengan
+                pihak-pihak eksternal seperti instansi pemerintah lainnya,
+                masyarakat, dan organisasi lain yang terkait.
+              </li>
+              <li>
+                Pemeliharaan Aset Desa: Bertanggung jawab atas pemeliharaan dan
+                pengelolaan aset-aset desa seperti bangunan, peralatan, dan
+                properti lainnya.
+              </li>
+              <li>
+                Pengembangan Sistem Informasi: Mengembangkan dan memelihara
+                sistem informasi yang diperlukan untuk mendukung kegiatan
+                administratif dan tata usaha desa.
+              </li>
+            </ul>
+            <p>
+              Tugas dan tanggung jawab Kaur TU dan Umum berfokus pada
+              pengelolaan administrasi dan tata usaha di tingkat desa, yang
+              melibatkan berbagai aspek seperti manajemen keuangan, pengelolaan
+              dokumen, dan koordinasi internal serta eksternal. Peran ini sangat
+              penting untuk menjaga kelancaran dan transparansi operasional
+              pemerintahan desa.
+            </p>
+          </div>
+
+          <div class="node-content" id="kaurKeuanganContent">
+            <p><strong>Jabatan</strong>: KAUR KEUANGAN</p>
+            <p><strong>Nama Pejabat</strong>: 
+                <a
+                href="#"
+                class="profile-link"
+                data-name="ANTIKA GAMIARSIH, M.Pd"
+                data-position="Kaur Keuangan"
+                data-nip="-"
+                data-education="M.Pd"
+                data-image="desa.jpg"
+                >ANTIKA GAMIARSIH, M.Pd</a
+              ></p>
+            <p><strong>NIP</strong>: -</p>
+            <p>
+              KAUR Keuangan (Kepala Urusan Keuangan) di desa memiliki tugas dan
+              fungsi yang penting dalam mengelola aspek keuangan di tingkat
+              desa. Berikut adalah beberapa tugas dan fungsi umum dari KAUR
+              Keuangan desa:
+            </p>
+            <ul>
+              <li>
+                Pengelolaan Keuangan: KAUR Keuangan bertanggung jawab atas
+                pengelolaan dana dan sumber daya keuangan desa. Mereka harus
+                memastikan bahwa semua transaksi keuangan di desa dicatat dengan
+                benar dan transparan.
+              </li>
+              <li>
+                Pembukuan: KAUR Keuangan harus menjaga dan mengelola catatan
+                keuangan yang akurat. Ini melibatkan pencatatan pemasukan dan
+                pengeluaran desa serta pembuatan laporan keuangan yang sesuai
+                dengan standar akuntansi.
+              </li>
+              <li>
+                Pembayaran dan Pencairan: KAUR Keuangan mengurus pembayaran gaji
+                pegawai desa, pembayaran layanan, dan pencairan dana untuk
+                program atau proyek desa.
+              </li>
+              <li>
+                Penyusunan Anggaran: KAUR Keuangan ikut berperan dalam
+                penyusunan anggaran desa. Mereka harus mengkoordinasikan dengan
+                pihak terkait untuk menentukan alokasi dana untuk berbagai
+                program dan kegiatan.
+              </li>
+              <li>
+                Pelaporan: KAUR Keuangan wajib menyusun laporan keuangan secara
+                rutin, yang biasanya meliputi laporan keuangan bulanan,
+                triwulanan, dan tahunan. Laporan ini akan menjadi dasar evaluasi
+                kinerja keuangan desa.
+              </li>
+              <li>
+                Pajak dan Pungutan: KAUR Keuangan juga dapat terlibat dalam
+                pemungutan pajak dan pungutan yang sah menurut peraturan daerah.
+                Mereka harus memastikan bahwa pungutan ini dilakukan dengan
+                transparan dan sesuai dengan aturan yang berlaku.
+              </li>
+              <li>
+                Pengendalian Keuangan: Salah satu tugas penting KAUR Keuangan
+                adalah memastikan pengendalian internal keuangan yang baik.
+                Mereka harus mencegah terjadinya penyalahgunaan dana dan
+                tindakan-tindakan yang tidak sesuai dengan aturan.
+              </li>
+              <li>
+                Koordinasi: KAUR Keuangan berkoordinasi dengan berbagai pihak
+                terkait, seperti kepala desa, perangkat desa lainnya, serta
+                instansi pemerintah terkait dalam hal pelaporan dan pengelolaan
+                keuangan.
+              </li>
+              <li>
+                Audit Internal: KAUR Keuangan dapat melaksanakan audit internal
+                untuk memastikan kepatuhan terhadap prosedur keuangan dan
+                menemukan potensi masalah sebelum menjadi lebih besar.
+              </li>
+              <li>
+                Pengelolaan Aset: Mereka juga bisa terlibat dalam mengelola
+                aset-aset desa, seperti tanah, bangunan, dan barang-barang
+                inventaris.
+              </li>
+              <li>
+                Penyusunan Rencana Keuangan: KAUR Keuangan dapat membantu dalam
+                penyusunan rencana pengeluaran dan investasi jangka panjang
+                desa.
+              </li>
+              <li>
+                Pendampingan Masyarakat: KAUR Keuangan bisa memberikan edukasi
+                keuangan kepada masyarakat, terutama dalam hal pengelolaan
+                keuangan rumah tangga dan partisipasi dalam program desa.
+              </li>
+            </ul>
+            <p>
+              Secara keseluruhan, KAUR Keuangan memiliki peran sentral dalam
+              menjaga kesehatan keuangan desa, memastikan transparansi dan
+              akuntabilitas, serta mendukung pelaksanaan program dan proyek yang
+              bermanfaat bagi masyarakat desa.
+            </p>
+          </div>
+
+          <div class="node-content" id="kaurPerencanaanContent">
+            <p><strong>Jabatan</strong>: KAUR PERENCANAAN</p>
+            <p><strong>Nama Pejabat</strong>: -</p>
+            <p><strong>NIP</strong>: -</p>
+            <p>
+              KAUR Perencanaan (Kepala Urusan Perencanaan) di desa memiliki
+              peran yang penting dalam merencanakan dan mengkoordinasikan
+              berbagai kegiatan pembangunan dan pengembangan di tingkat desa.
+              Berikut adalah beberapa fungsi dan tugas umum dari KAUR
+              Perencanaan di desa:
+            </p>
+            <ul>
+              <li>
+                Perencanaan Pembangunan: KAUR Perencanaan bertanggung jawab atas
+                penyusunan rencana pembangunan desa. Ini melibatkan identifikasi
+                kebutuhan dan potensi desa, serta merumuskan langkah-langkah
+                strategis untuk mencapai pembangunan yang berkelanjutan.
+              </li>
+              <li>
+                Penyusunan Rencana Kerja: KAUR Perencanaan merumuskan rencana
+                kerja tahunan desa berdasarkan rencana pembangunan jangka
+                menengah dan jangka panjang. Rencana kerja ini mencakup
+                prioritas proyek dan program yang akan dijalankan dalam satu
+                tahun.
+              </li>
+              <li>
+                Koordinasi Program dan Proyek: KAUR Perencanaan bekerja sama
+                dengan pihak terkait untuk mengkoordinasikan pelaksanaan program
+                dan proyek desa. Mereka memastikan bahwa program tersebut sesuai
+                dengan rencana pembangunan dan mencapai tujuan yang telah
+                ditetapkan.
+              </li>
+              <li>
+                Evaluasi Kinerja: Setelah program dan proyek dilaksanakan, KAUR
+                Perencanaan melakukan evaluasi untuk menilai sejauh mana
+                pencapaian tujuan dan dampak dari kegiatan tersebut. Evaluasi
+                ini membantu dalam peningkatan perencanaan di masa depan.
+              </li>
+              <li>
+                Pengumpulan Data: KAUR Perencanaan mengumpulkan data dan
+                informasi terkait kondisi desa, potensi sumber daya, serta
+                aspirasi masyarakat. Data ini digunakan sebagai dasar untuk
+                menyusun rencana pembangunan yang akurat.
+              </li>
+              <li>
+                Pembinaan Partisipasi Masyarakat: KAUR Perencanaan dapat
+                memfasilitasi partisipasi aktif masyarakat dalam proses
+                perencanaan pembangunan. Mereka dapat mengadakan pertemuan,
+                diskusi, atau konsultasi dengan masyarakat untuk mendapatkan
+                masukan dan dukungan.
+              </li>
+              <li>
+                Penyusunan Rencana Anggaran: KAUR Perencanaan bekerja sama
+                dengan KAUR Keuangan untuk menyusun rencana anggaran yang sesuai
+                dengan rencana pembangunan desa. Mereka memastikan bahwa sumber
+                daya keuangan dialokasikan dengan efektif sesuai dengan
+                prioritas pembangunan.
+              </li>
+              <li>
+                Pemantauan Pelaksanaan: KAUR Perencanaan memantau pelaksanaan
+                program dan proyek yang telah direncanakan. Jika ada kendala
+                atau perubahan situasi, mereka dapat melakukan penyesuaian dalam
+                rencana dan langkah-langkah tindak lanjut.
+              </li>
+              <li>
+                Konsultasi dan Koordinasi: KAUR Perencanaan berkolaborasi dengan
+                berbagai pihak, termasuk pemerintah daerah, lembaga
+                non-pemerintah, serta instansi terkait lainnya, untuk memastikan
+                keselarasan antara rencana desa dengan program nasional dan
+                daerah.
+              </li>
+              <li>
+                Pembinaan Pemberdayaan Masyarakat: KAUR Perencanaan dapat
+                memberikan bimbingan kepada masyarakat dalam hal pemberdayaan
+                ekonomi dan sosial, serta membantu dalam pengembangan usaha
+                kecil dan menengah di desa.
+              </li>
+            </ul>
+            <p>
+              Peran dan tanggung jawab KAUR Perencanaan dapat bervariasi
+              tergantung pada kebijakan dan kondisi di tiap desa, serta
+              peraturan yang berlaku dalam konteks pemerintahan desa di
+              Indonesia.
+            </p>
+          </div>
+
+          <div class="node-content" id="KasiPemerintahanContent">
+            <p><strong>Jabatan</strong>: KASI PEMERINTAHAN</p>
+            <p><strong>Nama Pejabat</strong>: 
+                <a
+                href="#"
+                class="profile-link"
+                data-name="ASWIR SAPUTRA"
+                data-position="Kasi Pemerintahan"
+                data-nip="-"
+                data-education="-"
+                data-image="desa.jpg"
+                >ASWIR SAPUTRA</a
+              ></p>
+            <p><strong>NIP</strong>: -</p>
+            <p>
+              KASI Pemerintahan (Kepala Seksi Pemerintahan) di desa memiliki
+              peran yang berkaitan dengan penyelenggaraan administrasi dan
+              pemerintahan di tingkat desa. Berikut adalah beberapa fungsi dan
+              tugas umum dari KASI Pemerintahan di desa:
+            </p>
+            <ul>
+              <li>
+                Koordinasi Administrasi Pemerintahan: KASI Pemerintahan
+                bertanggung jawab atas koordinasi dan pengelolaan administrasi
+                pemerintahan di desa. Ini melibatkan pengorganisasian dan
+                pelaksanaan berbagai tugas administratif yang terkait dengan
+                pemerintahan desa.
+              </li>
+              <li>
+                Pengelolaan Data dan Arsip: KASI Pemerintahan mengelola data dan
+                arsip yang berkaitan dengan administrasi desa, termasuk data
+                kependudukan, perizinan, serta dokumen-dokumen penting lainnya.
+              </li>
+              <li>
+                Pelayanan Publik: KASI Pemerintahan dapat berperan dalam
+                memberikan pelayanan publik kepada masyarakat, seperti
+                penerbitan surat keterangan, pembuatan kartu keluarga, akta
+                kelahiran, dan sejenisnya.
+              </li>
+              <li>
+                Perizinan dan Izin Usaha: KASI Pemerintahan dapat mengurus
+                perizinan dan izin usaha di tingkat desa, memastikan bahwa
+                proses perizinan berjalan lancar dan sesuai dengan peraturan
+                yang berlaku.
+              </li>
+              <li>
+                Kordinasi Kegiatan Pemerintahan Desa: KASI Pemerintahan bekerja
+                sama dengan perangkat desa lainnya untuk mengkoordinasikan
+                kegiatan-kegiatan pemerintahan desa, termasuk rapat-rapat dan
+                pertemuan penting.
+              </li>
+              <li>
+                Pemilihan dan Pemungutan Suara: Dalam hal pemilihan umum atau
+                pemilihan kepala desa, KASI Pemerintahan dapat terlibat dalam
+                penyelenggaraan proses pemilihan dan pemungutan suara.
+              </li>
+              <li>
+                Penyusunan Rencana Kerja Pemerintahan: KASI Pemerintahan dapat
+                membantu dalam penyusunan rencana kerja pemerintahan desa,
+                termasuk mengidentifikasi prioritas dan mengatur jadwal
+                pelaksanaannya.
+              </li>
+              <li>
+                Pemantauan dan Evaluasi Kegiatan: KASI Pemerintahan dapat
+                melakukan pemantauan terhadap pelaksanaan kegiatan pemerintahan
+                desa, serta melakukan evaluasi terhadap pencapaian tujuan dan
+                hasilnya.
+              </li>
+              <li>
+                Konsultasi dan Bimbingan Masyarakat: KASI Pemerintahan bisa
+                memberikan konsultasi dan bimbingan kepada masyarakat terkait
+                prosedur pemerintahan, perizinan, dan layanan publik.
+              </li>
+              <li>
+                Pemberdayaan Masyarakat: KASI Pemerintahan dapat mengarahkan
+                upaya pemberdayaan masyarakat, termasuk melibatkan masyarakat
+                dalam proses pembuatan keputusan dan implementasi kebijakan.
+              </li>
+              <li>
+                Komitmen terhadap Transparansi dan Akuntabilitas: KASI
+                Pemerintahan berkontribusi dalam menjaga transparansi dan
+                akuntabilitas pemerintahan desa, memastikan bahwa kebijakan dan
+                tindakan pemerintah dapat dipertanggungjawabkan kepada
+                masyarakat.
+              </li>
+              <li>
+                Pengelolaan Persoalan Pemerintahan: KASI Pemerintahan dapat
+                terlibat dalam mengelola permasalahan atau konflik yang terkait
+                dengan pemerintahan desa, termasuk memberikan saran dan solusi.
+              </li>
+            </ul>
+            <p>
+              Fungsi dan tugas KASI Pemerintahan dapat berbeda-beda tergantung
+              pada dinamika dan kebijakan di masing-masing desa, serta peraturan
+              yang berlaku dalam konteks pemerintahan desa di Indonesia.
+            </p>
+          </div>
+
+          <div class="node-content" id="KasiPelayananContent">
+            <p><strong>Jabatan</strong>: KASI PELAYANAN</p>
+            <p><strong>Nama Pejabat</strong>: -</p>
+            <p><strong>NIP</strong>: -</p>
+            <p>
+              KASI Pelayanan (Kepala Seksi Pelayanan) di desa memiliki peran
+              yang berkaitan dengan penyediaan pelayanan kepada masyarakat.
+              Berikut adalah beberapa fungsi dan tugas umum dari KASI Pelayanan
+              di desa:
+            </p>
+            <ul>
+              <li>
+                Pengelolaan Layanan Publik: KASI Pelayanan bertanggung jawab
+                atas pengelolaan berbagai layanan publik yang disediakan oleh
+                pemerintah desa kepada masyarakat, seperti pelayanan
+                administrasi, kesehatan, pendidikan, dan lain-lain.
+              </li>
+              <li>
+                Pelayanan Administrasi: KASI Pelayanan dapat memberikan
+                pelayanan administrasi kepada masyarakat, seperti penerbitan
+                surat keterangan, akta kelahiran, kartu keluarga, dan
+                dokumen-dokumen penting lainnya.
+              </li>
+              <li>
+                Pelayanan Kesehatan: KASI Pelayanan bisa terlibat dalam
+                penyediaan layanan kesehatan dasar di desa, seperti program
+                imunisasi, penyuluhan kesehatan, dan pendataan kesehatan
+                masyarakat.
+              </li>
+              <li>
+                Pelayanan Pendidikan: KASI Pelayanan dapat mendukung penyediaan
+                layanan pendidikan dasar di desa, memastikan bahwa anak-anak
+                mendapatkan akses pendidikan yang baik.
+              </li>
+              <li>
+                Pelayanan Sosial: KASI Pelayanan dapat memfasilitasi pelayanan
+                sosial kepada masyarakat yang membutuhkan, seperti layanan
+                bantuan sosial, perawatan lanjut usia, dan sejenisnya.
+              </li>
+              <li>
+                Kordinasi Layanan: KASI Pelayanan bekerja sama dengan pihak
+                terkait, seperti lembaga sosial, kesehatan, dan pendidikan,
+                untuk mengkoordinasikan penyediaan layanan kepada masyarakat.
+              </li>
+              <li>
+                Penyusunan Rencana Layanan: KASI Pelayanan bisa membantu dalam
+                penyusunan rencana kerja terkait penyediaan layanan publik,
+                termasuk mengidentifikasi kebutuhan dan prioritas.
+              </li>
+              <li>
+                Pemantauan dan Evaluasi Pelayanan: KASI Pelayanan dapat memantau
+                pelaksanaan layanan yang telah disediakan dan melakukan evaluasi
+                untuk memastikan kualitas dan dampak yang dihasilkan.
+              </li>
+              <li>
+                Pemberdayaan Masyarakat: KASI Pelayanan dapat terlibat dalam
+                upaya pemberdayaan masyarakat, seperti memberikan informasi
+                tentang hak dan kewajiban masyarakat terkait layanan publik.
+              </li>
+              <li>
+                Pengelolaan Fasilitas Layanan: KASI Pelayanan bisa mengelola
+                fasilitas-fasilitas yang digunakan untuk menyediakan layanan
+                publik, seperti puskesmas desa atau ruang pelayanan
+                administrasi.
+              </li>
+              <li>
+                Konsultasi dan Penyelesaian Masalah: KASI Pelayanan bisa
+                memberikan konsultasi kepada masyarakat terkait layanan yang
+                tersedia dan membantu dalam penyelesaian masalah yang terkait
+                dengan pelayanan.
+              </li>
+              <li>
+                Komunikasi dengan Masyarakat: KASI Pelayanan berperan dalam
+                berkomunikasi dengan masyarakat, menginformasikan tentang
+                layanan yang tersedia, prosedur yang harus diikuti, dan
+                informasi penting lainnya.
+              </li>
+            </ul>
+            <p>
+              Fungsi dan tugas KASI Pelayanan dapat bervariasi tergantung pada
+              kebijakan, kebutuhan, dan kondisi di masing-masing desa, serta
+              peraturan yang berlaku dalam konteks pemerintahan desa di
+              Indonesia.
+            </p>
+          </div>
+
+          <div class="node-content" id="KasiKesejahteraanContent">
+            <p><strong>Jabatan</strong>: KASI KESEJAHTERAAN</p>
+            <p><strong>Nama Pejabat</strong>: 
+                <a
+                href="#"
+                class="profile-link"
+                data-name="DORITO, S.Pd"
+                data-position="Kasi Kesejahteraan"
+                data-nip="-"
+                data-education="-"
+                data-image="desa.jpg"
+                >DORITO, S.Pd</a
+              ></p>
+            <p><strong>NIP</strong>: -</p>
+            <p>
+              KASI Kesejahteraan (Kepala Seksi Kesejahteraan) di desa memiliki
+              peran yang terkait dengan penyelenggaraan program dan kegiatan
+              yang bertujuan untuk meningkatkan kesejahteraan masyarakat desa.
+              Berikut adalah beberapa fungsi dan tugas umum dari KASI
+              Kesejahteraan di desa:
+            </p>
+            <ul>
+              <li>
+                Penyusunan Program Kesejahteraan: KASI Kesejahteraan bertanggung
+                jawab atas penyusunan program-program kesejahteraan masyarakat
+                desa, yang mencakup berbagai aspek seperti kesehatan,
+                pendidikan, ekonomi, dan sosial.
+              </li>
+              <li>
+                Pendataan Kesejahteraan Masyarakat: KASI Kesejahteraan
+                mengumpulkan dan mengelola data tentang kondisi kesejahteraan
+                masyarakat, seperti tingkat kemiskinan, tingkat pendidikan, dan
+                akses kesehatan.
+              </li>
+              <li>
+                Pengembangan Program Bantuan Sosial: KASI Kesejahteraan dapat
+                mengembangkan program-program bantuan sosial yang ditujukan
+                kepada masyarakat yang membutuhkan, seperti program bantuan
+                tunai, bantuan pangan, atau bantuan kesehatan.
+              </li>
+              <li>
+                Pemberdayaan Ekonomi Masyarakat: KASI Kesejahteraan dapat
+                membantu dalam mengembangkan program pelatihan dan pengembangan
+                usaha untuk meningkatkan pemberdayaan ekonomi masyarakat desa.
+              </li>
+              <li>
+                Kesehatan dan Gizi Masyarakat: KASI Kesejahteraan dapat terlibat
+                dalam program-program kesehatan dan gizi, seperti penyuluhan
+                tentang pola makan sehat, program imunisasi, dan program
+                pencegahan penyakit.
+              </li>
+              <li>
+                Pendidikan dan Pelatihan: KASI Kesejahteraan bisa mendukung
+                penyelenggaraan program pendidikan dan pelatihan untuk
+                meningkatkan keterampilan dan pengetahuan masyarakat desa.
+              </li>
+              <li>
+                Pemberdayaan Perempuan dan Anak: KASI Kesejahteraan dapat
+                mengkoordinasikan program-program yang bertujuan untuk
+                meningkatkan status, perlindungan, dan kesejahteraan perempuan
+                dan anak-anak di desa.
+              </li>
+              <li>
+                Pemantauan Kesejahteraan: KASI Kesejahteraan memantau
+                implementasi program-program kesejahteraan, mengevaluasi
+                dampaknya, dan melakukan penyesuaian jika diperlukan.
+              </li>
+              <li>
+                Kolaborasi dengan Lembaga Terkait: KASI Kesejahteraan bekerja
+                sama dengan lembaga pemerintah dan non-pemerintah terkait, serta
+                mungkin juga dengan lembaga internasional atau organisasi
+                masyarakat sipil, untuk mendukung program-program kesejahteraan.
+              </li>
+              <li>
+                Penanganan Kasus Kesejahteraan: KASI Kesejahteraan dapat
+                terlibat dalam menangani kasus-kasus kesejahteraan yang
+                kompleks, seperti kasus kekerasan dalam rumah tangga atau
+                perlindungan anak.
+              </li>
+              <li>
+                Pemberdayaan Masyarakat: KASI Kesejahteraan dapat membantu dalam
+                pemberdayaan masyarakat, dengan memberikan informasi, pelatihan,
+                dan dukungan yang diperlukan untuk meningkatkan kualitas hidup
+                mereka.
+              </li>
+              <li>
+                Advokasi dan Kesadaran Masyarakat: KASI Kesejahteraan dapat
+                berperan dalam meningkatkan kesadaran masyarakat terkait hak-hak
+                dan layanan yang tersedia untuk meningkatkan kesejahteraan
+                mereka.
+              </li>
+            </ul>
+            <p>
+              Fungsi dan tugas KASI Kesejahteraan dapat berbeda-beda tergantung
+              pada kebijakan dan kondisi di masing-masing desa, serta peraturan
+              yang berlaku dalam konteks pemerintahan desa di Indonesia.
+            </p>
+          </div>
+
+          <div class="node-content" id="kepalaDusunContent">
+            <p><strong>Jabatan</strong>: KEPALA DUSUN</p>
+            <p><strong>Nama Pejabat</strong>: -</p>
+            <p><strong>NIP</strong>: -</p>
+            <p>
+              Sebagai Kepala Dusun, peran Anda akan sangat tergantung pada
+              struktur dan tata kelola pemerintahan desa di wilayah Anda. Namun,
+              dalam banyak kasus, Kepala Dusun memiliki tanggung jawab dan
+              tugas-tugas berikut:
+            </p>
+            <ul>
+              <li>
+                Pengelolaan Dusun: Sebagai Kepala Dusun, Anda akan bertanggung
+                jawab atas pengelolaan operasional dan administratif dusun,
+                termasuk pemeliharaan infrastruktur dan fasilitas umum.
+              </li>
+              <li>
+                Pendataan Penduduk: Anda akan berperan dalam mengumpulkan dan
+                memelihara data penduduk di dusun Anda, seperti pencatatan
+                kelahiran, kematian, dan perubahan data penduduk lainnya.
+              </li>
+              <li>
+                Pelayanan Masyarakat: Anda akan menjadi tokoh yang masyarakat
+                dapat menghubungi untuk mendapatkan informasi, saran, atau
+                bantuan terkait berbagai masalah dan kebutuhan sehari-hari.
+              </li>
+              <li>
+                Kordinasi Program Pembangunan: Anda akan berkoordinasi dengan
+                pemerintah desa atau instansi terkait untuk memastikan
+                implementasi program pembangunan di tingkat dusun sesuai dengan
+                rencana.
+              </li>
+              <li>
+                Penyuluhan dan Pemberdayaan Masyarakat: Anda dapat mengadakan
+                pertemuan atau penyuluhan kepada masyarakat untuk memberikan
+                informasi tentang program-program pemerintah, hak-hak, dan
+                kewajiban masyarakat, serta memberdayakan mereka.
+              </li>
+              <li>
+                Pengawasan dan Penanganan Persoalan: Anda dapat memantau dan
+                menangani masalah-masalah yang muncul di dusun, baik itu
+                permasalahan sosial, konflik, atau keamanan.
+              </li>
+              <li>
+                Pembinaan Gotong Royong: Anda dapat mendorong dan memfasilitasi
+                kegiatan gotong royong dalam masyarakat, seperti membersihkan
+                lingkungan atau memperbaiki infrastruktur bersama.
+              </li>
+              <li>
+                Penghubung Antar Dusun: Jika ada lebih dari satu dusun dalam
+                desa Anda, Anda bisa menjadi penghubung antara dusun-dusun
+                tersebut, memastikan koordinasi dan kolaborasi yang baik.
+              </li>
+              <li>
+                Pentingnya Keterlibatan Komunitas: Kepala Dusun perlu aktif
+                terlibat dalam berbagai kegiatan komunitas, mendengarkan
+                aspirasi dan kebutuhan masyarakat, serta membantu dalam
+                mengambil keputusan yang melibatkan seluruh dusun.
+              </li>
+              <li>
+                Pelaporan: Anda perlu melaporkan perkembangan dan kondisi dusun
+                secara berkala kepada pemerintah desa atau instansi yang lebih
+                tinggi.
+              </li>
+              <li>
+                Pertemuan dan Konsultasi: Anda dapat mengadakan pertemuan rutin
+                dengan warga dusun untuk menjelaskan perkembangan, mendengar
+                masukan mereka, serta membangun komunikasi yang baik.
+              </li>
+              <li>
+                Advokasi Masyarakat: Anda dapat memperjuangkan hak-hak dan
+                kepentingan masyarakat di tingkat dusun, serta berperan sebagai
+                perwakilan mereka dalam interaksi dengan pemerintah desa atau
+                lembaga lainnya.
+              </li>
+            </ul>
+            <p>
+              Peran Kepala Dusun akan bervariasi tergantung pada konteks sosial,
+              budaya, dan kebijakan yang berlaku di wilayah Anda.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="center-container">
+        <div class="profile-card" id="profileCard">
+            <span class="close-button" id="closeButton">&times;</span>
+            <img src="" alt="Foto Profil" id="profileImage" class="img-fluid mb-3">
+            <h5 id="profileName"></h5>
+            <p id="profilePosition"></p>
+            <p id="profileNIP"></p>
+            <p id="profileEducation"></p>
+            <!-- Tambahkan informasi lainnya -->
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Menambahkan kelas "active-node" pada elemen "Struktur Organisasi"
+        $(".node[data-target='StrukturOrganisasiContent']").addClass(
+          "active-node"
+        );
+
+        // Menampilkan konten "Struktur Organisasi"
+        $("#StrukturOrganisasiContent").addClass("active");
+      });
+
+      $(".node").click(function () {
+        $(".node").removeClass("active-node");
+        $(this).addClass("active-node");
+        $(".node-content").removeClass("active");
+        $("#" + $(this).data("target")).addClass("active");
+      });
+
+    // script profile card
+    const profileLinks = document.querySelectorAll('.profile-link');
+    const profileCard = document.getElementById('profileCard');
+    const closeButton = document.getElementById('closeButton');
+    const profileImage = document.getElementById('profileImage');
+    const profileName = document.getElementById('profileName');
+    const profilePosition = document.getElementById('profilePosition');
+    const profileNIP = document.getElementById('profileNIP');
+    const profileEducation = document.getElementById('profileEducation');
+
+    profileLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            profileName.textContent = event.target.dataset.name;
+            profileImage.src = event.target.dataset.image;
+            profilePosition.textContent = 'Jabatan: ' + event.target.dataset.position;
+            profileNIP.textContent = 'NIP: ' + event.target.dataset.nip;
+            profileEducation.textContent = 'Pendidikan Terakhir: ' + event.target.dataset.education;
+
+            profileCard.style.display = 'block';
+        });
+    });
+
+    closeButton.addEventListener('click', () => {
+        profileCard.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === profileCard) {
+            profileCard.style.display = 'none';
+        }
+    });
+    </script>
+  </body>
+</html>

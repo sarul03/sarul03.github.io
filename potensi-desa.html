@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>eLEARNING - eLearning HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-beta3/css/bootstrap.min.css">
+    <style>
+        .potensi-card {
+          margin-bottom: 20px;
+        }
+    
+        .potensi-img {
+          position: relative;
+          border-radius: 8px;
+          overflow: hidden;
+        }
+    
+        .potensi-title {
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          background-color: rgba(255, 255, 255, .15);  
+          backdrop-filter: blur(5px);
+          padding: 5px;
+          border-radius: 5px;
+        }
+    
+        .potensi-desc {
+          padding: 10px;
+        }
+      </style>
+
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+   <!-- Navbar Start -->
+   <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+    <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <h2 class="m-0 text-primary"><i class="logo"><img src="logo/logo kampar.png" alt="Logo" style="max-width: 40px;">
+        </i> </i>Desa Siabu</h2>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a href="index.html" class="nav-item nav-link active">Home</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Profil Desa </a>
+                <div class="dropdown-menu fade-down m-0">
+                    <a href="about.html" class="dropdown-item">Tentang Kami</a>
+                    <a href="visi-misi.html" class="dropdown-item">Visi & Misi</a>
+                    <a href="sejarah.html" class="dropdown-item">Sejarah Desa</a>
+                    <a href="potensi-desa.html" class="dropdown-item">Potensi Desa</a>
+                    <a href="data-kelurahan.html" class="dropdown-item">Data kelurahan</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pemerintahan  </a>
+                <div class="dropdown-menu fade-down m-0">
+                    <a href="struktur-pemerintahan-desa.html" class="dropdown-item">Struktur Pemerintahan Desa</a>
+                    <a href="perangkat-desa.html" class="dropdown-item">Perangkat Desa</a>
+                    <a href="organisasi-kemasyarakatan.html" class="dropdown-item">Organisasi Kemasyarakatan</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Informasi Publik </a>
+                <div class="dropdown-menu fade-down m-0">
+                    <a href="Berita.html" class="dropdown-item">Berita</a>
+                    <a href="Galeri.html" class="dropdown-item">Gallery Desa</a>
+                </div>
+            </div>    
+            <a href="contact.html" class="nav-item nav-link active  ">Contact</a>
+        </div>
+        <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+    </div>
+</nav>
+<!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Potensi Desa</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center wow fadeInUp" data-wow-delay="0.3s">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                          
+                            <li class="breadcrumb-item active" aria-current="page">POTENSI DESA</li>
+                          </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Potensi Desa Start -->
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Potensi</h6>
+            <h1 class="mb-4">Potensi Desa Siabu</h1>
+        </div>
+        <p  class="wow zoomIn" data-wow-delay="0.1s">Desa Siabu adalah sebuah desa yang kaya akan potensi pertanian dan keindahan alam. Salah satu sektor pertanian yang menjadi andalan masyarakat desa ini adalah perkebunan sawit. 
+            Luas perkebunan sawit di desa ini sangat mengesankan, mencakup kepemilikan pribadi masyarakat dan perusahaan yang dikelola oleh warga desa. Selain sawit, perkebunan karet juga 
+            menjadi sektor penting dalam mata pencaharian penduduk desa. Kebun karet yang luas hampir menyeluruh di lingkungan Desa Siabu merupakan aset berharga bagi masyarakat setempat.
+        </p>
+        <p  class="wow zoomIn" data-wow-delay="0.2s">
+            Namun, keberagaman potensi pertanian Desa Siabu tidak berhenti di situ saja. Desa ini juga menjadi rumah bagi perkebunan serai wangi yang menjadi satu-satunya kebun serai wangi
+            terluas di daerah tersebut. Meskipun lokasinya agak jauh dari permukiman, kebun serai wangi yang seluas 8 Ha ini menarik minat orang dengan aroma harum yang khas dan panorama 
+            yang menakjubkan.
+        </p>
+        <p class="wow zoomIn" data-wow-delay="0.3s">
+            Tidak hanya itu, alam juga memberikan karunia lain bagi Desa Siabu. Sungai yang mengalir membelah desa ini menjadi sebuah potensi pariwisata yang menjanjikan. Keindahan panorama
+            di sekitar sungai, dengan pinggiran yang dikelilingi oleh rumput hijau, menarik banyak wisatawan lokal untuk mengunjungi dan bahkan berkemah di sekitar sungai.
+        </p>
+        <p class="pb-4 border-bottom border-2 border-primary wow zoomIn" data-wow-delay="0.4s">
+            Dengan potensi pertanian yang beragam dan keindahan alam yang menakjubkan, Desa Siabu memiliki peluang besar untuk mengembangkan sektor pariwisata dan meningkatkan kesejahteraan 
+            masyarakatnya. Pengelolaan yang bijaksana atas potensi-potensi ini akan memberikan manfaat jangka panjang bagi desa dan generasi mendatang.
+        </p>
+    
+        
+          <!-- Perkebunan Sawit -->
+        <div class="col-lg-8 m-4 wow zoomIn" data-wow-delay="0.5s">
+            <div class="potensi-img">
+            <img src="img/gambar_sawit.jpg" class="card-img-top img-fluid" alt="Perkebunan Sawit">
+            <div class="potensi-title " ><h5 class=" text-Secondary rounded-3">1. Perkebunan Sawit</h5></div>
+          </div>
+        </div>
+
+        <p class="pb-4 border-bottom border-2 border-primary mt-3 wow zoomIn" data-wow-delay="0.6s" style="text-indent: 35px;">Di antara berbagai sektor pertanian yang menjadi tulang punggung mata pencaharian masyarakat Desa Siabu, perkebunan sawit menonjol sebagai salah satu yang paling dominan. Desa ini dikelilingi oleh perkebunan sawit yang membentang luas, menciptakan lanskap yang dipenuhi dengan gemerisik daun sawit dan harum khas buah sawit yang sedang mengalami proses pengolahan. Baik kepemilikan pribadi oleh masyarakat setempat maupun kepemilikan oleh perusahaan yang dikelola oleh masyarakat desa, keduanya berkontribusi pada perekonomian dan gaya hidup penduduk setempat.
+            Sejak beberapa dekade terakhir, perkebunan sawit telah menjadi motor penggerak pertumbuhan ekonomi bagi desa ini. Kondisi geografis dan iklim yang mendukung, bersama dengan dukungan pemerintah dan sektor swasta, telah membuka peluang besar bagi masyarakat desa untuk mengembangkan usaha perkebunan sawit. Penduduk desa, baik tua maupun muda, terlibat aktif dalam segala aspek budidaya sawit, mulai dari penanaman bibit hingga pemanenan buah sawit yang matang.         
+            Kepemilikan lahan sawit secara pribadi memberikan kesempatan bagi masyarakat desa untuk memiliki kontrol atas tanah mereka sendiri dan menikmati hasilnya. Walaupun skala perkebunan pribadi cenderung lebih kecil dibandingkan dengan perusahaan besar, perkebunan ini memainkan peran penting dalam mengurangi tingkat pengangguran dan kemiskinan di desa. Para petani sawit pribadi dengan tekun mengurus kebun-kebun mereka dan mencari cara untuk meningkatkan hasil panen mereka.      
+            Di sisi lain, perusahaan sawit yang dioperasikan oleh masyarakat desa berfungsi sebagai entitas yang lebih besar dengan manajemen dan operasional yang lebih terstruktur. Skala ekonomi yang lebih besar memungkinkan mereka untuk menghadapi tantangan dan kesempatan di pasar dengan lebih efisien. Selain itu, perusahaan sawit ini juga menjadi sumber lapangan kerja bagi banyak penduduk desa, termasuk untuk pekerjaan di kebun dan juga administrasi.
+            Namun, meskipun perkebunan sawit memberikan manfaat ekonomi bagi Desa Siabu, mereka juga dihadapkan pada tantangan tertentu. Salah satunya adalah isu lingkungan yang terkait dengan deforestasi dan dampak negatif pada keanekaragaman hayati. Praktik pembukaan lahan baru untuk perkebunan sawit telah memicu masalah ekologis yang serius, termasuk hilangnya habitat alami bagi flora dan fauna setempat.
+            Dalam menghadapi tantangan ini, pemerintah dan masyarakat desa bekerja sama untuk mencari solusi berkelanjutan. Upaya penanaman kembali dan perlindungan terhadap hutan dan lingkungan setempat diupayakan untuk memitigasi dampak negatif dari ekspansi perkebunan sawit. Penggunaan teknologi ramah lingkungan juga diadopsi untuk meningkatkan efisiensi dan mengurangi dampak lingkungan dari sektor sawit.
+            Ketika melihat masa depan, perkebunan sawit tetap menjadi faktor penting dalam pembangunan ekonomi Desa Siabu. Namun, penting bagi masyarakat dan pemerintah untuk menjaga keseimbangan antara pembangunan ekonomi dan pelestarian lingkungan. Dengan upaya yang tepat, sektor pertanian sawit dapat terus menjadi salah satu pilar penting dalam menciptakan kesejahteraan bagi masyarakat desa, tanpa mengorbankan lingkungan dan keberlanjutan generasi mendatang.</p>
+    
+          <!-- Perkebunan Karet -->
+        <div class="col-lg-8 m-4 wow zoomIn" data-wow-delay="0.7s">
+            <div class="potensi-img">
+            <img src="img/gambar_karet.jpg" class="card-img-top img-fluid" alt="Perkebunan Karet">
+            <div class="potensi-title"><h5 class=" text-Secondary rounded-3">2. Perkebunan Karet</h5></div> 
+          </div>    
+        </div>
+
+        <p class="pb-4 border-bottom border-2 border-primary mt-3 wow zoomIn" data-wow-delay="0.8s" style="text-indent: 35px;">Desa Siabu tidak hanya mengandalkan perkebunan sawit sebagai sektor pertanian utama, tetapi juga memiliki potensi yang mengesankan dalam perkebunan karet. Perkebunan karet di desa ini juga luas dan menjadi mata pencaharian penting bagi masyarakat setempat, tidak kalah dengan perkebunan sawit yang menjadi primadona sebelumnya.
+            Perkebunan karet menawarkan kesempatan ekonomi bagi penduduk desa dengan adanya banyak pemilik kebun karet yang merupakan masyarakat setempat. Setiap pemilik kebun karet dengan tekun merawat kebun mereka, memastikan produksi karet tetap optimal. Tanaman karet yang menghasilkan getah berharga ini memberikan tambahan pendapatan bagi masyarakat desa dan memainkan peran kunci dalam mengurangi angka pengangguran di wilayah tersebut.           
+            Luasnya perkebunan karet di Desa Siabu mengesankan, meliputi hampir seluruh lingkungan desa. Kebun-kebun karet tersebar luas di berbagai sudut desa, menandakan tingginya minat masyarakat untuk terlibat dalam sektor pertanian ini. Dalam perjalanan melintasi desa, kita akan disuguhkan oleh pemandangan perkebunan karet yang menyejukkan, dengan pepohonan karet yang tumbuh subur dan menjulang tinggi.            
+            Keberadaan perkebunan karet ini juga memberikan dampak positif bagi ekosistem desa. Tanaman karet membantu menjaga keseimbangan alam dan mengurangi tingkat erosi tanah. Selain itu, perkebunan karet juga menciptakan habitat yang ideal bagi flora dan fauna lokal, menjaga keanekaragaman hayati dan keindahan alam Desa Siabu.            
+            Meskipun perkebunan karet memiliki potensi yang luar biasa, sektor ini juga menghadapi tantangan yang perlu diatasi. Fluktuasi harga karet di pasar global dapat mempengaruhi pendapatan petani karet dan stabilitas ekonomi desa. Oleh karena itu, kolaborasi antara masyarakat desa, pemerintah, dan sektor swasta sangat penting dalam mencari solusi untuk menghadapi tantangan ekonomi ini dan mengoptimalkan potensi perkebunan karet.            
+            Dalam jangka panjang, perkebunan karet di Desa Siabu memiliki potensi untuk terus berkembang dan memberikan manfaat bagi masyarakat desa. Dengan pengelolaan yang baik, perkebunan karet dapat menjadi salah satu pilar utama dalam perekonomian desa, memperkuat ketahanan ekonomi, dan meningkatkan kesejahteraan penduduk setempat.
+        </p>
+    
+          <!-- Perkebunan Serai Wangi -->
+        <div class="col-lg-8 m-4">
+            <div class="potensi-img">
+          <img src="img/gambar_serai.jpg" class="card-img-top img-fluid" alt="Perkebunan Serai Wangi">
+          <div class="potensi-title"><h5 class=" text-Secondary rounded-3">3. Perkebunan Serai Wangi</h5></div>
+          </div>
+        </div>
+
+        <p class="pb-4 border-bottom border-2 border-primary mt-3" style="text-indent: 35px;">
+            Kebun serai wangi yang terletak di Desa Siabu menjadi salah satu kekayaan alam yang unik dan menonjol. Dalam wilayah desa ini, kebun serai wangi menjadi satu-satunya yang luas, mencakup area seluas sekitar 8 hektar. Keberadaan perkebunan serai wangi yang terluas ini menambah daya tarik dan keistimewaan bagi Desa Siabu.
+            Meskipun luasnya perkebunan serai wangi mencapai 8 hektar, namun lokasinya terletak cukup jauh dari permukiman masyarakat desa. Jaraknya sekitar 2 kilometer, yang harus ditempuh dengan berjalan kaki untuk mencapai kebun tersebut. Meski memerlukan usaha dan waktu untuk mencapainya, tempat ini tetap menjadi tujuan favorit bagi wisatawan yang tertarik untuk merasakan keindahan alam dan aroma harum yang khas dari serai wangi.
+            Kebun serai wangi yang luas ini menawarkan pemandangan yang menakjubkan dengan deretan tanaman serai yang tumbuh subur dan rapi. Aroma harum serai yang menyebar di sekitar kebun menciptakan suasana yang menenangkan dan menyegarkan pikiran. Para pengunjung yang datang untuk mengeksplorasi kebun serai wangi ini seringkali dihibur dengan suasana yang alami dan keheningan yang memanjakan jiwa.
+            Meskipun kebun serai wangi menjadi daya tarik pariwisata di Desa Siabu, tetapi potensi ini belum sepenuhnya dimanfaatkan. Aksesibilitas yang relatif sulit ke kebun ini mungkin menjadi salah satu kendala bagi pariwisata di daerah tersebut. Namun, dengan perencanaan dan pengelolaan yang tepat, potensi pariwisata kebun serai wangi bisa dioptimalkan dan menjadi sumber pendapatan tambahan bagi masyarakat desa.
+            Tak hanya itu, keberadaan kebun serai wangi yang luas juga memberikan manfaat ekonomi bagi masyarakat desa. Penanaman dan produksi serai wangi dapat menjadi sumber penghasilan bagi penduduk setempat, dan peluang usaha ini dapat dikembangkan lebih lanjut untuk meningkatkan kesejahteraan masyarakat.
+            Dalam rangka memanfaatkan potensi kebun serai wangi dan mengembangkan sektor pariwisata, kerjasama antara pemerintah daerah, masyarakat desa, dan sektor swasta menjadi kunci sukses. Dukungan infrastruktur, aksesibilitas, promosi pariwisata, dan pelatihan bagi warga setempat dalam pengelolaan kebun serai wangi menjadi aspek penting untuk memastikan manfaat maksimal dari potensi alam ini.
+            Dengan pemanfaatan dan pengelolaan yang berkelanjutan, kebun serai wangi di Desa Siabu dapat menjadi magnet pariwisata yang menarik, memberikan manfaat ekonomi bagi masyarakat, dan menjadi simbol kekayaan alam desa yang unik dan memikat.
+        </p>
+    
+          <!-- Sungai -->
+        <div class="col-lg-8 m-4">
+            <div class="potensi-img">
+            <img src="img/gambar_sungai.jpg" class="card-img-top img-fluid" alt="Sungai">
+            <div class="potensi-title"><h5 class=" text-Secondary rounded-3">4. Sungai</h5></div>
+            </div>
+        </div>
+
+        <p class="  mt-3" style="text-indent: 35px;">
+            Sungai merupakan salah satu kekayaan alam yang sangat berharga bagi Desa Siabu, dan potensi ini tidak hanya menjadi aset lokal, tetapi juga menjadi daya tarik bagi pariwisata. Panorama indah yang melingkupi sungai ini telah menghipnotis banyak wisatawan lokal, yang dengan penuh kagum mengakui keelokan alam yang terhampar di sekitar sungai tersebut. Semakin banyak orang yang tertarik untuk mengunjungi tempat ini, karena keindahan sungai yang memikat hati.
+            Yang membuat sungai di Desa Siabu begitu menarik adalah keindahannya yang alami dan autentik. Pemandangan disekitaran sungai sangat memesona, dengan hamparan hijau dari rumput-rumput yang menghiasi pinggiran sungai dan menambahkan kesegaran pada panorama alam. Aliran sungai yang jernih dan tenang juga menciptakan suasana yang damai, memberikan ketenangan bagi siapa saja yang berada di sekitar sungai ini.
+            Selain menjadi tempat yang indah untuk dinikmati secara visual, sungai Desa Siabu juga menyediakan berbagai peluang rekreasi, terutama untuk para penggemar berkemah. Luasnya pinggiran sungai dan lingkungan yang alami menjadikan tempat ini sebagai lokasi yang ideal untuk berkemah. Banyak wisatawan yang memilih untuk berkemah di sekitar sungai untuk merasakan kedamaian alam dan mengalami petualangan yang berbeda dari rutinitas sehari-hari.
+            Potensi pariwisata sungai ini masih dapat ditingkatkan dengan lebih baik melalui upaya pengelolaan dan promosi yang tepat. Pengembangan fasilitas rekreasi seperti area berkemah, trekking, dan fasilitas lainnya dapat menarik lebih banyak wisatawan untuk mengunjungi Desa Siabu dan menikmati keindahan alam sungai ini.
+            Keterlibatan masyarakat desa dalam pengelolaan pariwisata sungai juga menjadi kunci penting untuk memastikan keberlanjutan dan kesuksesan potensi ini. Masyarakat desa dapat berperan sebagai pemandu lokal atau mengelola penginapan wisata di sekitar sungai, sehingga mereka dapat merasakan manfaat langsung dari potensi pariwisata ini.
+            Dalam mengoptimalkan potensi pariwisata sungai, penting juga untuk menjaga kelestarian alam dan keberlangsungan lingkungan. Upaya konservasi dan kesadaran lingkungan harus menjadi prioritas, untuk memastikan bahwa keindahan dan kekayaan sungai dapat dinikmati oleh generasi mendatang.
+            Dengan potensi pariwisata sungai yang menakjubkan ini, Desa Siabu memiliki kesempatan untuk menjadi destinasi wisata alam yang menarik, menawarkan pesona alam yang memukau dan pengalaman rekreasi yang tak terlupakan bagi wisatawan. Selain itu, pariwisata sungai ini juga dapat memberikan dampak ekonomi positif bagi masyarakat desa dan membantu dalam pembangunan dan kesejahteraan mereka.
+        </p>
+    
+    <!-- Potensi Desa End -->
+        
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Privacy Policy</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">FAQs & Help</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Gallery</h4>
+                    <a href="Galeri.html">
+                        <div class="row g-2 pt-2">
+                            <div class="col-4">
+                                <img class="img-fluid bg-light p-1" src="img/foto1.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid bg-light p-1" src="img/foto2.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid bg-light p-1" src="img/foto3.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid bg-light p-1" src="img/foto4.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid bg-light p-1" src="img/foto5.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid bg-light p-1" src="img/kantordesa.jpg" alt="">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Newsletter</h4>
+                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">DesaSiabu.site</a>, All Right Reserved.
+                        Designed By <a class="border-bottom" >Un</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="">Home</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-beta3/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- ... -->
+<!-- Tambahkan script di bawah konten HTML -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- ... -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
